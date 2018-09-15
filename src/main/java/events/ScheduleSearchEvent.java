@@ -8,7 +8,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import models.Apprantice;
 import models.reference.ScheduleReference;
-import parsers.ScheduleParser;
 import tables.TableCreator;
 import tables.forms.MyTable;
 
@@ -18,7 +17,6 @@ public class ScheduleSearchEvent implements EventHandler<ActionEvent>
     private TextField groupNumberTextField;
     private ScheduleReference scheduleReference;
     private MyTable schedule;
-    private ScheduleParser scheduleParser;
     private TableCreator tableCreator;
 
     public ScheduleSearchEvent(ComboBox facultyComboBox, TextField groupNumber, MyTable schedule)
