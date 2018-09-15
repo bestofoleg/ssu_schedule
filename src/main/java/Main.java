@@ -36,35 +36,6 @@ public class Main extends Application
 
         this.schedule = new MyTable();
 
-//        List<MyColumn> columns = new ArrayList<>();
-//
-//        columns.add(new MyColumn("пн"));
-//        columns.add(new MyColumn("вт"));
-//        columns.add(new MyColumn("ср"));
-//        columns.add(new MyColumn("чт"));
-//        columns.add(new MyColumn("пт"));
-//        columns.add(new MyColumn("сб"));
-//
-//        Random random = new Random();
-//
-//        int cellsCount = 0;
-//
-//        for(MyColumn column : columns)
-//        {
-//            column.setMaxWidth(40);
-//            column.setMaxHeight(40);
-//            column.setMinWidth(40);
-//            column.setMinHeight(40);
-//            cellsCount = random.nextInt(5);
-//            for(int i = 0;i < cellsCount;i ++)
-//            {
-//                column.addCell(new MyCell(i + ""));
-//            }
-//            this.schedule.addColumn(column);
-//
-//        }
-
-
         this.facultyText = new Text("Факультет");
         this.groupNumberText = new Text("Номер группы");
         this.facultyComboBox = new ComboBox<>();
