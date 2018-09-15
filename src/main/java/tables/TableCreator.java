@@ -10,8 +10,6 @@ import tables.forms.MyCell;
 import tables.forms.MyColumn;
 import tables.forms.MyTable;
 
-import java.io.IOException;
-
 public class TableCreator
 {
 
@@ -74,8 +72,6 @@ public class TableCreator
                 }
                 columnsCounter = 0;
 
-
-                //this.emptyTable.addColumn(column);
             }
 
 

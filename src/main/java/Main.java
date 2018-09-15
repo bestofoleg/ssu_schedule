@@ -3,19 +3,11 @@ import javafx.application.Application;
 import javafx.geometry.Point2D;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import tables.forms.MyCell;
-import tables.forms.MyColumn;
 import tables.forms.MyTable;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 public class Main extends Application
 {

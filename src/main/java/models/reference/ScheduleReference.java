@@ -1,7 +1,6 @@
 package models.reference;
 
 import models.Apprantice;
-import org.jsoup.Jsoup;
 
 import java.util.HashMap;
 
@@ -17,6 +16,7 @@ public class ScheduleReference implements IReference
 
         this.nameToRefMap.put("КНиИТ", "knt");
         this.nameToRefMap.put("Мех-мат", "mm");
+        this.nameToRefMap.put("ФНБМТ","fn");
 
         this.reference = new StringBuffer(45);
         this.reference.append("https://www.sgu.ru/schedule/");
@@ -25,8 +25,6 @@ public class ScheduleReference implements IReference
 
     @Override
     public String getReference() {
-
-
 
         this.reference.append(nameToRefMap.get(this.apprantice.getFaculty()));
         this.reference.append("/do/");
