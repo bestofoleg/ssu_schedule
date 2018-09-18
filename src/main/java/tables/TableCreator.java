@@ -10,6 +10,8 @@ import tables.forms.MyCell;
 import tables.forms.MyColumn;
 import tables.forms.MyTable;
 
+import java.io.IOException;
+
 public class TableCreator
 {
 
@@ -21,41 +23,38 @@ public class TableCreator
         this.scheduleReference = scheduleReference;
     }
 
+    private void createTopOfTable()
+    {
+        this.emptyTable.addColumn(new MyColumn("ПН"));
+        this.emptyTable.addColumn(new MyColumn("ВТ"));
+        this.emptyTable.addColumn(new MyColumn("СР"));
+        this.emptyTable.addColumn(new MyColumn("ЧТ"));
+        this.emptyTable.addColumn(new MyColumn("ПТ"));
+        this.emptyTable.addColumn(new MyColumn("СБ"));
+    }
+
     public void createTable()
     {
+        Document document = null;
         this.emptyTable.clear();
         try{
-
-            Document document = Jsoup.connect(this.scheduleReference.getReference()).get();
+            this.createTopOfTable();
+            document = Jsoup.connect(this.scheduleReference.getReference()).get();
             Element table = document.getElementById("schedule");
             Elements tableRows = table.getElementsByTag("tr");
             tableRows.remove(0);
-
             MyCell cell = null;
             MyColumn column = null;
             StringBuffer info = new StringBuffer();
-
-            this.emptyTable.addColumn(new MyColumn("ПН"));
-            this.emptyTable.addColumn(new MyColumn("ВТ"));
-            this.emptyTable.addColumn(new MyColumn("СР"));
-            this.emptyTable.addColumn(new MyColumn("ЧТ"));
-            this.emptyTable.addColumn(new MyColumn("ПТ"));
-            this.emptyTable.addColumn(new MyColumn("СБ"));
-
             int columnsCounter = 0;
-
             for(Element i : tableRows) {
-
-
                 Elements tableCells = i.getElementsByTag("td");
-
                 for (Element j : tableCells) {
                     Elements div1 = j.getElementsByTag("div");
                     Elements div2 = null;
                     if(div1.size() != 0)
                     {
                         div2 = div1.get(0).getElementsByClass("l-dn");
-
                         info.append(div2.get(0).ownText());
                     }
                     else
@@ -71,14 +70,17 @@ public class TableCreator
 
                 }
                 columnsCounter = 0;
-
             }
 
+        } catch (IOException e) {
 
-        } catch (Exception e) {
-
+            e.printStackTrace();
             this.emptyTable.getChildren().add(new Text("Неизвестное расписание!"));
 
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+            this.emptyTable.getChildren().add(new Text("Ошибка связи!"));
         }
 
     }

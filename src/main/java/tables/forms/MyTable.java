@@ -14,6 +14,7 @@ public class MyTable extends HBox
 
     public MyTable()
     {
+        super();
         this.columnsCount = 0;
         this.maxCellSize = 0;
         this.children = this.getChildren();

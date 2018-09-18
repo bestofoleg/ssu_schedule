@@ -10,6 +10,7 @@ public class MyCell extends VBox
 
     public MyCell(String info)
     {
+        super();
         this.infoText = new Text(info);
         this.infoText.setWrappingWidth(100);
         this.getChildren().add(this.infoText);

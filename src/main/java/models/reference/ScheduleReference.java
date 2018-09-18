@@ -27,7 +27,7 @@ public class ScheduleReference implements IReference
     public String getReference() {
 
         this.reference.append(nameToRefMap.get(this.apprantice.getFaculty()));
-        this.reference.append("/do/");
+        this.reference.append("/do/");//the custom part of reference
         this.reference.append(this.apprantice.getGroupNumber());
 
         return this.reference.toString();

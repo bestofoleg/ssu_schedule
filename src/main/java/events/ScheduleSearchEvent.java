@@ -27,14 +27,6 @@ public class ScheduleSearchEvent implements EventHandler<ActionEvent>
     @Override
     public void handle(ActionEvent event)
     {
-
-//        Apprantice apprantice = new Apprantice(this.facultyComboBox.getValue().toString()
-//                , this.groupNumberTextField.getText());
-//        this.scheduleReference = new ScheduleReference(apprantice);
-//        this.scheduleParser = new ScheduleParser(this.scheduleReference);
-//        this.scheduleParser.parse();
-//        this.schedule.getChildren().add(this.scheduleParser.getParseTable());
-
         Apprantice apprantice = new Apprantice(this.facultyComboBox.getValue().toString()
                 , this.groupNumberTextField.getText());
         this.scheduleReference = new ScheduleReference(apprantice);

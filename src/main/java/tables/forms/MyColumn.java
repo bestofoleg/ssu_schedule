@@ -11,6 +11,7 @@ public class MyColumn extends VBox
     private ObservableList<Node> children;
 
     public MyColumn(String columnName) {
+        super();
         this.columnName = columnName;
         this.columnSize = 0;
         this.children = this.getChildren();
